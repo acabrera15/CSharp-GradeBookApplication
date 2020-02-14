@@ -8,5 +8,14 @@ namespace GradeBook.GradeBooks
         {
             Type = GradeBookType.Ranked;
         }
+
+        public override char GetLetterGrade(double averageGrade)
+        {
+            if (Students.Count < 5)
+            {
+                throw new System.InvalidOperationException("Number of students is too small");
+            }
+            return 'F';
+        }
     }
 }
